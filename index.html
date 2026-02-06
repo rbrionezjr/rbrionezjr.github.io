@@ -4,9 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ruben Brionez Jr – Portfolio</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #0b1220;           /* page background */
@@ -25,13 +27,23 @@
 
     /* Light theme (auto if user prefers) */
     @media (prefers-color-scheme: light) {
-      :root { --bg:#f7f9fc; --bg-elev:#ffffff; --text:#101427; --muted:#54617e; --card:#ffffff; --shadow:0 10px 30px rgba(16,20,39,.08); }
+      :root {
+        --bg:#f7f9fc;
+        --bg-elev:#ffffff;
+        --text:#101427;
+        --muted:#54617e;
+        --card:#ffffff;
+        --shadow:0 10px 30px rgba(16,20,39,.08);
+      }
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--text); background:
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
         radial-gradient(1200px 600px at 10% -10%, rgba(124,196,255,.15), transparent 60%),
         radial-gradient(1000px 500px at 110% 10%, rgba(179,136,255,.12), transparent 65%),
         var(--bg);
@@ -39,37 +51,75 @@
 
     /* NAV */
     .nav{
-      position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px);
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(140%) blur(8px);
       background:linear-gradient(180deg, rgba(15,23,41,.85), rgba(15,23,41,.55));
       border-bottom:1px solid rgba(255,255,255,.06);
-      
       /* force nav text to white */
       --text: #ffffff;
     }
-    .nav-inner{max-width:1100px; margin:auto; display:flex; align-items:center; justify-content:space-between; padding:14px 20px}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px; color: #ffffff   /* Force brand name text to white */}
-    .brand-dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(45deg, var(--brand), var(--brand-2)); box-shadow:0 0 12px var(--brand)}
+    .nav-inner{
+      max-width:1100px; margin:auto;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 20px
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.3px;
+      color:#ffffff;
+    }
+    .brand-dot{
+      width:10px; height:10px; border-radius:50%;
+      background:linear-gradient(45deg, var(--brand), var(--brand-2));
+      box-shadow:0 0 12px var(--brand)
+    }
     .nav a{color:var(--text); text-decoration:none; opacity:.9}
     .nav-links{display:flex; gap:18px}
     .nav a:hover{opacity:1}
 
     /* HERO */
-    .hero{max-width:1100px; margin:40px auto 10px; padding:0 20px; display:grid; grid-template-columns:1.2fr .8fr; gap:24px; align-items:center}
+    .hero{
+      max-width:1100px; margin:40px auto 10px; padding:0 20px;
+      display:grid; grid-template-columns:1.2fr .8fr; gap:24px; align-items:center
+    }
     .hero h1{font-size: clamp(28px, 4vw, 44px); line-height:1.1; margin:0 0 10px}
-    .hero p{color:var(--muted); font-size: clamp(15px, 2vw, 18px)}
+    .hero p{color:var(--muted); font-size: clamp(15px, 2vw, 18px); margin:0}
     .pill{
-      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; background:rgba(124,196,255,.12);
-      border:1px solid rgba(124,196,255,.35); color:var(--text); border-radius:999px; font-size:13px
+      display:inline-flex; align-items:center; gap:8px; padding:8px 12px;
+      background:rgba(124,196,255,.12);
+      border:1px solid rgba(124,196,255,.35);
+      color:var(--text);
+      border-radius:999px; font-size:13px
     }
-    .cta{margin-top:16px; display:flex; gap:12px}
+    .cta{margin-top:16px; display:flex; gap:12px; flex-wrap:wrap}
     .btn{
-      display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; font-weight:600; text-decoration:none; transition:transform .15s ease, box-shadow .2s ease; border:1px solid transparent
+      display:inline-flex; align-items:center; gap:10px;
+      padding:12px 16px;
+      border-radius:12px;
+      font-weight:600;
+      text-decoration:none;
+      transition:transform .15s ease, box-shadow .2s ease;
+      border:1px solid transparent
     }
-    .btn-primary{background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#0b1020; box-shadow: var(--shadow)}
+    .btn-primary{
+      background:linear-gradient(135deg, var(--brand), var(--brand-2));
+      color:#0b1020;
+      box-shadow: var(--shadow)
+    }
     .btn-primary:hover{transform:translateY(-2px)}
-    .btn-ghost{border-color:rgba(255,255,255,.12); color:var(--text); background:rgba(255,255,255,.04)}
+    .btn-ghost{
+      border-color:rgba(255,255,255,.12);
+      color:var(--text);
+      background:rgba(255,255,255,.04)
+    }
 
-    .hero-card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+    .hero-card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow)
+    }
     .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:8px}
     .kpi{background:var(--bg-elev); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:12px}
     .kpi .num{font-size:22px; font-weight:800}
@@ -81,23 +131,52 @@
     h2{margin:0; font-size: clamp(22px,3vw,28px)}
     .muted{color:var(--muted)}
 
-    /* GRID */
+    /* GRID / CARDS */
     .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px}
-    .card{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:16px; transition:transform .15s ease, box-shadow .2s ease; position:relative; overflow:hidden}
+    .card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);
+      padding:16px;
+      transition:transform .15s ease, box-shadow .2s ease;
+      position:relative;
+      overflow:hidden
+    }
     .card:hover{transform:translateY(-3px); box-shadow:var(--shadow)}
     .card h3{margin:0 0 6px; font-size:18px}
     .card p{margin:0; color:var(--muted); font-size:14px}
     .meta{display:flex; align-items:center; gap:10px; margin-top:12px; font-size:12px; color:var(--muted)}
     .dot{width:8px; height:8px; border-radius:50%}
     .badges{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
-    .badge{padding:4px 8px; font-size:11px; border-radius:999px; background:rgba(124,196,255,.12); border:1px solid rgba(124,196,255,.35)}
+    .badge{
+      padding:4px 8px; font-size:11px;
+      border-radius:999px;
+      background:rgba(124,196,255,.12);
+      border:1px solid rgba(124,196,255,.35)
+    }
     .card a.btn{margin-top:12px}
+
+    /* Featured panel "frame" */
+    .panel{
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+      margin: 16px 0 22px;
+    }
 
     /* SEARCH + FILTER */
     .toolbar{display:flex; gap:12px; align-items:center}
-    .input{flex:1; padding:10px 12px; border-radius:10px; background:var(--bg-elev); border:1px solid rgba(255,255,255,.08); color:var(--text)}
+    .input{
+      flex:1;
+      padding:10px 12px;
+      border-radius:10px;
+      background:var(--bg-elev);
+      border:1px solid rgba(255,255,255,.08);
+      color:var(--text)
+    }
 
-    
     /* CONTACT */
     .contact-list{list-style:none; padding:0; margin:16px 0 0; display:grid; gap:8px}
     .contact-list a{color:var(--brand)}
@@ -106,13 +185,40 @@
     footer{text-align:center; padding:28px 20px; color:var(--muted)}
 
     /* SKELETONS */
-    .skeleton{position:relative; overflow:hidden; background:linear-gradient(90deg, rgba(255,255,255,.06) 25%, rgba(255,255,255,.12) 37%, rgba(255,255,255,.06) 63%); background-size:400% 100%; animation:shimmer 1.2s infinite}
+    .skeleton{
+      position:relative; overflow:hidden;
+      background:linear-gradient(
+        90deg,
+        rgba(255,255,255,.06) 25%,
+        rgba(255,255,255,.12) 37%,
+        rgba(255,255,255,.06) 63%
+      );
+      background-size:400% 100%;
+      animation:shimmer 1.2s infinite
+    }
     @keyframes shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
 
-    /* FLOATING TOGGLER */
-    .top-btn{position:fixed; right:16px; bottom:16px; background:var(--bg-elev); border:1px solid rgba(255,255,255,.1); border-radius:999px; padding:10px 12px; color:var(--text); text-decoration:none; box-shadow:var(--shadow)}
+    /* Back-to-top */
+    .top-btn{
+      position:fixed; right:16px; bottom:16px;
+      background:var(--bg-elev);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:999px;
+      padding:10px 12px;
+      color:var(--text);
+      text-decoration:none;
+      box-shadow:var(--shadow)
+    }
+
+    /* Mobile improvements */
+    @media (max-width: 860px){
+      .hero{grid-template-columns:1fr}
+      .section-title{flex-direction:column; align-items:flex-start}
+      .toolbar{width:100% !important; max-width:none !important}
+    }
   </style>
 </head>
+
 <body>
   <!-- NAV -->
   <nav class="nav">
@@ -133,13 +239,16 @@
       <span class="pill">GIS Solutions Engineering • Automation • Data Integration</span>
       <h1>Building enterprise GIS automation and integration solutions.</h1>
       <p>
-        GIS Solutions Engineer specializing in ArcGIS Enterprise automation, Python/ArcPy geoprocessing, Power Automate orchestration, and API-driven data pipelines. I build scalable tools that improve data quality, reduce manual processing, and support engineering and construction decision-making.
+        GIS Solutions Engineer specializing in ArcGIS Enterprise automation, Python/ArcPy geoprocessing, Power Automate orchestration, and API-driven data pipelines.
+        I build scalable tools that improve data quality, reduce manual processing, and support engineering and construction decision-making.
       </p>
       <div class="cta">
         <a class="btn btn-primary" href="#projects">Explore Projects</a>
-        <a class="btn btn-ghost" href="https://github.com/rbrionezjr-bellevue" target="_blank" rel="noopener">GitHub Profile</a>
+        <a class="btn btn-ghost" href="https://github.com/rbrionezjr" target="_blank" rel="noopener">GitHub Profile</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/ruben-brionez-jr/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
+
     <div class="hero-card">
       <div class="kpis">
         <div class="kpi"><div class="num" id="kpi-repos">—</div><div class="lbl">Public Repos</div></div>
@@ -155,82 +264,55 @@
     <div class="section-title">
       <h2>Projects</h2>
       <div class="toolbar" style="width:100%; max-width:520px">
-        <input id="search" class="input" type="search" placeholder="Search repositories… (e.g., national park, arcgis, quickbase)" />
+        <input id="search" class="input" type="search" placeholder="Search repositories… (e.g., arcgis, automation, pipeline)" />
       </div>
     </div>
     <p class="muted"></p>
 
-  <h3 style="margin:10px 0 6px">Featured Automation & Integration Projects</h3>
-<p class="muted">Selected enterprise GIS and workflow automation solutions (repos being finalized for publication).</p>
+    <!-- Featured projects panel -->
+    <div class="panel">
+      <h3 style="margin:0 0 6px">Featured Automation & Integration Projects</h3>
+      <p class="muted" style="margin:0 0 14px">
+        Selected enterprise GIS and workflow automation solutions (repos being finalized for publication).
+      </p>
 
-<div class="grid" style="margin:16px 0 22px">
+      <div class="grid">
+        <div class="card">
+          <h3>ArcGIS Geoprocessing Automation Framework</h3>
+          <p>Reusable Python and ArcPy framework for standardized feature processing, spatial QA validation, and engineering BOM-style outputs across multiple project zones.</p>
+          <div class="badges">
+            <span class="badge">Python</span>
+            <span class="badge">ArcPy</span>
+            <span class="badge">Automation Framework</span>
+          </div>
+          <div class="meta">Repo publishing in progress</div>
+        </div>
 
-  <div class="card">
-    <h3>ArcGIS Geoprocessing Automation Framework</h3>
-    <p>Reusable Python and ArcPy framework for standardized feature processing, spatial QA validation, and engineering BOM-style outputs across multiple project zones.</p>
-    <div class="badges">
-      <span class="badge">Python</span>
-      <span class="badge">ArcPy</span>
-      <span class="badge">Automation Framework</span>
+        <div class="card">
+          <h3>Enterprise GIS Integration Scripts</h3>
+          <p>API-driven automation scripts for ArcGIS feature services, cross-system data synchronization, and validation workflows.</p>
+          <div class="badges">
+            <span class="badge">ArcGIS Enterprise</span>
+            <span class="badge">REST APIs</span>
+            <span class="badge">Integration</span>
+          </div>
+          <div class="meta">Repo publishing in progress</div>
+        </div>
+
+        <div class="card">
+          <h3>Power Automate GIS Orchestration</h3>
+          <p>Triggered cloud and desktop workflows orchestrating GIS updates, reporting steps, and operational data processes.</p>
+          <div class="badges">
+            <span class="badge">Power Automate</span>
+            <span class="badge">Workflow Automation</span>
+            <span class="badge">Orchestration</span>
+          </div>
+          <div class="meta">Repo publishing in progress</div>
+        </div>
+      </div>
     </div>
-    <div class="meta">Repo publishing in progress</div>
-  </div>
 
-  <div class="card">
-    <h3>Enterprise GIS Integration Scripts</h3>
-    <p>API-driven automation scripts for ArcGIS feature services, cross-system data synchronization, and validation workflows.</p>
-    <div class="badges">
-      <span class="badge">ArcGIS Enterprise</span>
-      <span class="badge">REST APIs</span>
-      <span class="badge">Integration</span>
-    </div>
-    <div class="meta">Repo publishing in progress</div>
-  </div>
-
-  <div class="card">
-    <h3>Power Automate GIS Orchestration</h3>
-    <p>Triggered cloud and desktop workflows orchestrating GIS updates, reporting steps, and operational data processes.</p>
-    <div class="badges">
-      <span class="badge">Power Automate</span>
-      <span class="badge">Workflow Automation</span>
-      <span class="badge">Orchestration</span>
-    </div>
-    <div class="meta">Repo publishing in progress</div>
-  </div>
-
-</div>   
-
-  <div class="grid" style="margin:16px 0 22px">
-  <div class="card">
-    <h3>ArcGIS Geoprocessing Automation Framework</h3>
-    <p>Reusable Python and ArcPy automation framework for standardized feature processing, spatial QA validation, and engineering BOM generation across multiple project zones.</p>
-    <div class="badges">
-      <span class="badge">Python</span><span class="badge">ArcPy</span><span class="badge">ArcGIS Pro</span>
-    </div>
-    <a class="btn btn-ghost" href="https://github.com/rbrionezjr" target="_blank" rel="noopener">View on GitHub</a>
-  </div>
-
-  <div class="card">
-    <h3>Enterprise GIS Integration Scripts</h3>
-    <p>Power Automate cloud and desktop orchestration workflows for triggered GIS updates, reporting pipelines, and cross-platform process automation.</p>
-    <div class="badges">
-      <span class="badge">ArcGIS Enterprise</span><span class="badge">REST APIs</span><span class="badge">Automation</span>
-    </div>
-    <a class="btn btn-ghost" href="https://github.com/rbrionezjr" target="_blank" rel="noopener">View on GitHub</a>
-  </div>
-
-  <div class="card">
-    <h3>Power Automate Orchestration</h3>
-    <p>Triggered workflows and desktop/cloud orchestration patterns to automate reporting and data updates.</p>
-    <div class="badges">
-      <span class="badge">Power Automate</span><span class="badge">Orchestration</span><span class="badge">Integration</span>
-    </div>
-    <a class="btn btn-ghost" href="https://github.com/rbrionezjr" target="_blank" rel="noopener">View on GitHub</a>
-  </div>
-</div>
-
-
-    
+    <!-- Auto repo grid -->
     <div id="repo-grid" class="grid" aria-live="polite">
       <!-- skeleton cards while loading -->
       <div class="card skeleton" style="height:160px"></div>
@@ -242,27 +324,26 @@
   </section>
 
   <!-- RESUME -->
-<section id="resume">
-  <div class="section-title">
-    <h2>Resume</h2>
-    <p class="muted">View inline or download a copy.</p>
-  </div>
+  <section id="resume">
+    <div class="section-title">
+      <h2>Resume</h2>
+      <p class="muted">View inline or download a copy.</p>
+    </div>
 
-  <!-- Inline PDF viewer -->
-  <div class="card" style="padding:0; overflow:hidden">
-    <iframe
-      src="assets/Ruben_Brionez_Jr_Resume.pdf#view=fitH"
-      title="Resume PDF"
-      style="width:100%; height:900px; border:0"
-      loading="lazy">
-    </iframe>
-  </div>
+    <div class="card" style="padding:0; overflow:hidden">
+      <iframe
+        src="assets/Ruben_Brionez_Jr_Resume.pdf#view=fitH"
+        title="Resume PDF"
+        style="width:100%; height:900px; border:0"
+        loading="lazy">
+      </iframe>
+    </div>
 
-  <div class="cta" style="margin-top:14px">
-    <a class="btn btn-primary" href="assets/Ruben_Brionez_Jr_Resume.pdf" target="_blank" rel="noopener">Open PDF</a>
-    <a class="btn btn-ghost" href="assets/Ruben_Brionez_Jr_Resume.pdf" download>Download</a>
-  </div>
-</section>
+    <div class="cta" style="margin-top:14px">
+      <a class="btn btn-primary" href="assets/Ruben_Brionez_Jr_Resume.pdf" target="_blank" rel="noopener">Open PDF</a>
+      <a class="btn btn-ghost" href="assets/Ruben_Brionez_Jr_Resume.pdf" download>Download</a>
+    </div>
+  </section>
 
   <!-- CONTACT -->
   <section id="contact">
@@ -270,30 +351,31 @@
     <p class="muted">Happy to connect about GIS automation, enterprise integrations, workflow orchestration, and geospatial data pipelines.</p>
     <ul class="contact-list">
       <li>Email: <a href="mailto:rbrionezjr@gmail.com">rbrionezjr@gmail.com</a></li>
-      <li>GitHub: <a href="https://github.com/rbrionezjr-bellevue" target="_blank" rel="noopener">@rbrionezjr-bellevue</a></li>
+      <li>GitHub: <a href="https://github.com/rbrionezjr" target="_blank" rel="noopener">@rbrionezjr</a></li>
       <li>LinkedIn: <a href="https://www.linkedin.com/in/ruben-brionez-jr/" target="_blank" rel="noopener">/in/ruben-brionez-jr</a></li>
     </ul>
   </section>
 
   <footer>
-    <small>© 2025 Ruben Brionez Jr — Built with vanilla HTML/CSS/JS</small>
+    <small>© 2026 Ruben Brionez Jr — Built with vanilla HTML/CSS/JS</small>
   </footer>
 
   <a class="top-btn" href="#about" aria-label="Back to top">▲</a>
 
   <script>
     const USER = 'rbrionezjr';
-    const EXCLUDE = new Set([''+USER+'.github.io']);
+    const EXCLUDE = new Set([`${USER}.github.io`]);
 
     const grid = document.getElementById('repo-grid');
     const empty = document.getElementById('empty');
     const search = document.getElementById('search');
 
-    // Fetch repos
     async function loadRepos() {
       try {
         const res = await fetch(`https://api.github.com/users/${USER}/repos?per_page=100&sort=updated`);
         const data = await res.json();
+        if (!res.ok) throw new Error(data?.message || 'GitHub API error');
+
         const repos = (Array.isArray(data) ? data : []).filter(r => !EXCLUDE.has(r.name) && !r.archived);
 
         // KPIs
@@ -302,12 +384,10 @@
         const langs = new Set(repos.map(r=>r.language).filter(Boolean));
         document.getElementById('kpi-langs').textContent = String(langs.size);
 
-        // Sort by pushed_at desc
         repos.sort((a,b)=> new Date(b.pushed_at) - new Date(a.pushed_at));
 
         render(repos);
 
-        // Search filter
         search.addEventListener('input', () => {
           const q = search.value.toLowerCase().trim();
           const filtered = repos.filter(r => `${r.name} ${r.description||''}`.toLowerCase().includes(q));
@@ -315,14 +395,20 @@
         });
 
       } catch (e) {
-        grid.innerHTML = `<div class="card"><h3>Could not load repositories</h3><p class="muted">GitHub API error. Try refreshing in a moment.</p></div>`;
+        grid.innerHTML = `<div class="card"><h3>Could not load repositories</h3><p class="muted">${e.message || 'GitHub API error. Try refreshing in a moment.'}</p></div>`;
         console.error(e);
       }
     }
 
     function colorForLang(lang){
-      // simple palette for common langs
-      const map = { Python:'#3572A5', JavaScript:'#f1e05a', TypeScript:'#3178c6', HTML:'#e34c26', CSS:'#563d7c', Jupyter:'#DA5B0B' };
+      const map = {
+        Python:'#3572A5',
+        JavaScript:'#f1e05a',
+        TypeScript:'#3178c6',
+        HTML:'#e34c26',
+        CSS:'#563d7c',
+        Jupyter:'#DA5B0B'
+      };
       return map[lang] || '#9fb1d6';
     }
 
@@ -334,17 +420,25 @@
       for(const r of list){
         const card = document.createElement('div');
         card.className = 'card';
-        const langDot = r.language ? `<span class="dot" style="background:${colorForLang(r.language)}"></span>${r.language}` : '';
+
+        const langDot = r.language
+          ? `<span class="dot" style="background:${colorForLang(r.language)}"></span>${r.language}`
+          : '';
         const stars = r.stargazers_count ? `★ ${r.stargazers_count}` : '';
         const forks = r.forks_count ? `⑂ ${r.forks_count}` : '';
-        const meta = [langDot, stars, forks, new Date(r.pushed_at).toLocaleDateString()].filter(Boolean).join(' • ');
+        const meta = [langDot, stars, forks, new Date(r.pushed_at).toLocaleDateString()]
+          .filter(Boolean)
+          .join(' • ');
 
         card.innerHTML = `
           <h3>${r.name}</h3>
           <p>${r.description || 'No description provided.'}</p>
           <div class="meta">${meta}</div>
           <div class="badges">
-            ${r.topics?.slice(0,4).map(t=>`<span class='badge'>${t}</span>`).join('') || ''}
+            ${(r.topics && r.topics.length)
+              ? r.topics.slice(0,4).map(t=>`<span class='badge'>${t}</span>`).join('')
+              : ''
+            }
           </div>
           <a class="btn btn-ghost" href="${r.html_url}" target="_blank" rel="noopener">View Repo</a>
         `;
